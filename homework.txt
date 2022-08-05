@@ -1,0 +1,35 @@
+create database Homework;
+create table Department(deptid int(11) primary key,deptname varchar(100)not null);
+create table employee(empid int(11) primary key,empname varchar(100)not null,empDOB date,empSalary int(150),deptid int,FOREIGN KEY (deptid) REFERENCES Department(deptid));
+use Homework;
+insert into Department values(11,'Java');
+insert into Department values(12,'Mearn');
+insert into Department values(13,'sql');
+insert into Department values(14,'spring');
+insert into Department values(15,'c++');
+insert into employee values(1,'sonu','1999-03-10',10000,11);
+insert into employee values(2,'akash','1998-01-20',11000,11);
+insert into employee values(3,'sumit','1996-01-20',9000,11);
+insert into employee values(4,'prajjawal','2001-01-20',10000,12);
+insert into employee values(5,'raj','2002-02-20',12000,12);
+insert into employee values(6,'ram','1995-02-20',12000,12);
+insert into employee values(7,'mohan','1995-02-20',8000,12);
+insert into employee values(8,'ashu','1994-02-20',9500,12);
+insert into employee values(9,'kavisha','1998-02-20',9800,12);
+insert into employee values(10,'kashish','1998-09-15',15000,11);
+insert into employee values(11,'raju','1998-05-10',16000,13);
+insert into employee values(12,'akshat','2001-05-11',12000,13);
+insert into employee values(13,'champak','2001-05-11',12000,13);
+insert into employee values(14,'soni','2001-06-04',90000,14);
+insert into employee values(15,'bhatta','2000-06-04',80000,14);
+insert into employee values(16,'monu','2000-02-04',80000,14);
+insert into employee values(17,'manu','1995-02-04',85000,14);
+insert into employee values(18,'golu','1995-02-04',88000,15);
+insert into employee values(19,'goli','1999-01-08',15000,15);
+insert into employee values(20,'Tarak','1990-01-08',15000,15);
+
+           
+                      select count(*) as count,Department.deptname from employee inner join Department on employee.deptid = Department.deptid group by Department.deptname order by count(*) desc
+limit 1;
+           
+          
